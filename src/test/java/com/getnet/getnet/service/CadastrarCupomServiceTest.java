@@ -33,7 +33,7 @@ class CadastrarCupomServiceTest {
         doReturn(voucher).when(cadastrarCupomService).inserirDados(any());
 
         Optional<Voucher> voucherOptional = Optional.ofNullable(VoucherCreator.createVoucher());
-        when(voucherRepository.findByEmail(anyString())).thenReturn(voucherOptional);
+        when(voucherRepository.findByCodigoUnico(anyString())).thenReturn(voucherOptional);
 
     }
 

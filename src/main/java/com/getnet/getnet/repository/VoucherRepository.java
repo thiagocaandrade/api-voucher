@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface VoucherRepository extends MongoRepository<Voucher, Long> {
 
     Optional<Voucher> findByCodigoVoucherAndEmail(String codigoVoucher, String email);
-    Optional<Voucher> findByEmail(String email);
+    Optional<Voucher> findByCodigoUnico(String codigoUnico);
 }

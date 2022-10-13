@@ -23,10 +23,8 @@ public class VoucherCreator {
 
     public static ResgatarCupomDto createResgatarCupomDtoVoucher(){
         return ResgatarCupomDto.builder()
-                .codigoVoucher("VOUCHER30")
                 .dataUso(LocalDateTime.now())
                 .descontoPercentualFixo(30)
-                .ofertaEspecial("OFERTA30")
                 .build();
     }
 

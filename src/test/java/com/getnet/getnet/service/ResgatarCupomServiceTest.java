@@ -40,17 +40,13 @@ class ResgatarCupomServiceTest {
     @DisplayName("Busca informacoes do Voucher")
     void testGetSuccessVoucher() {
 
-        String expectOfertaEspecial = VoucherCreator.createVoucher().getOfertaEspecial();
         Integer expectDescontoPercentualFixo = VoucherCreator.createVoucher().getDescontoPercentualFixo();
-        String expectCodigoVoucher = VoucherCreator.createVoucher().getCodigoVoucher();
 
         ResgatarCupomDto voucher = resgatarCupomService.buscarDados(ArgumentMatchers.anyString(), ArgumentMatchers.anyString());
 
         Assertions.assertThat(voucher).isNotNull();
 
-        Assertions.assertThat(voucher.getOfertaEspecial()).isNotNull().isEqualTo(expectOfertaEspecial);
         Assertions.assertThat(voucher.getDescontoPercentualFixo()).isNotNull().isEqualTo(expectDescontoPercentualFixo);
-        Assertions.assertThat(voucher.getCodigoVoucher()).isNotNull().isEqualTo(expectCodigoVoucher);
         Assertions.assertThat(voucher.getDataUso()).isNotNull();
 
     }

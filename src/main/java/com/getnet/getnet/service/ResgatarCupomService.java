@@ -21,11 +21,8 @@ public class ResgatarCupomService {
         Voucher voucher = repository.findByCodigoVoucherAndEmail(codigoVoucher,
                 email).orElseThrow(() -> new NotFoundException("Recurso não encontrado"));
 
-        resgatarCupomDto.setCodigoVoucher(voucher.getCodigoVoucher());
-        resgatarCupomDto.setOfertaEspecial(voucher.getOfertaEspecial());
         resgatarCupomDto.setDescontoPercentualFixo(voucher.getDescontoPercentualFixo());
         resgatarCupomDto.setDataUso(LocalDateTime.now());
-        resgatarCupomDto.setOfertaEspecial(voucher.getOfertaEspecial());
 
         return resgatarCupomDto;
     }

@@ -70,17 +70,14 @@ class VoucherControllerTest {
     @DisplayName("Busca informacoes do Voucher")
     void testGetSuccessVoucher() {
 
-        String expectOfertaEspecial = VoucherCreator.createVoucher().getOfertaEspecial();
         Integer expectDescontoPercentualFixo = VoucherCreator.createVoucher().getDescontoPercentualFixo();
-        String expectCodigoVoucher = VoucherCreator.createVoucher().getCodigoVoucher();
 
         ResponseEntity<ResgatarCupomDto> voucher = voucherController.buscar(ArgumentMatchers.anyString(), ArgumentMatchers.anyString());
 
         Assertions.assertThat(voucher).isNotNull();
 
-        Assertions.assertThat(voucher.getBody().getOfertaEspecial()).isNotNull().isEqualTo(expectOfertaEspecial);
         Assertions.assertThat(voucher.getBody().getDescontoPercentualFixo()).isNotNull().isEqualTo(expectDescontoPercentualFixo);
-        Assertions.assertThat(voucher.getBody().getCodigoVoucher()).isNotNull().isEqualTo(expectCodigoVoucher);
+        Assertions.assertThat(voucher.getBody().getDataUso()).isNotNull();
 
     }
 
